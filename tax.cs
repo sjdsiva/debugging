@@ -1,6 +1,6 @@
 using System;
 
-class Computation
+class tax
 {
     public static void Main(string[] args)
     {
@@ -10,11 +10,11 @@ class Computation
         string status;
         // I moved the variables here & added excemption, dependents, and status
 
-        Console.WriteLine("Enter income: ");
+        Console.WriteLine("Enter income:");
         income = double.Parse(Console.ReadLine());
         Console.WriteLine("Enter status:");
-        status = Convert.ToString(Console.ReadLine());
-        Console.Write("Enter Dependents");
+        status = Console.ReadLine();
+        Console.Write("Enter Dependents: \n");
         dependents = int.Parse(Console.ReadLine());
 
         {
@@ -38,7 +38,7 @@ class Computation
             totalTax = income * initialTax;
         }
 
-        excemption = Convert.ToInt32(status);
+        excemption = 0;
 
         {
             if (status == "S")
@@ -93,7 +93,6 @@ class Computation
         
         total = totalTax - excemption - dependents;
                Console.WriteLine(total);
-        Console.ReadKey();
     }
 		
 }
